@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<!--<link rel="stylesheet" href="web_app/css/reg.css">-->
+		<title>FORM LOGIN AND REGISTER</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Poppins', sans-serif;
+			}
+			body{
+				background: grey;
+				width:100%;
+				height:100vh;
+			   font-family: sans-serif;
+				
+			   display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background-color: #186375;
+	background: -webkit-linear-gradient(left, #073950, #36445e);
+
+   
+			  
+				  background-color: #f2f2f2;
+				  width: 100%;
+				  height: 100vh;
+				  font-family: Arial, sans-serif;
+			  }
+			  
+			  .SignUp {
+				  width: 300px;
+				  height: auto;
+				  margin: auto;
+				  background: #ffffff;
+				  border-radius: 33px;
+			  }
+			  
+			  h1 {
+				  text-align: center;
+				  color: #FF8C00;
+				  padding-top: 12px;
+			  }
+			  
+			  h4 {
+				  text-align: center;
+				  margin-left: 28px;
+			  }
+			  
+			  form {
+				  width: 250px;
+				  color: #FF69B4;
+				  margin-left: 12px;
+			  }
+			  
+			  form label {
+				  display: flex;
+				  margin-top: 20px;
+				  font-size: 18px;
+			  }
+			  
+			  form input {
+				  width: 100%;
+				  padding: 10px;
+				  border: none;
+				  border: 1px solid #808080;
+				  border-radius: 33px;
+				  outline: none;
+			  }
+			  
+			  input[type="submit"] {
+				  width: 250px;
+				  height: 40px;
+				  margin-top: 20px;
+				  border: none;
+				  background-color: #EE82EE;
+				  color: #ffffff;
+				  font-size: 15px;
+				  cursor: pointer;
+			  }
+			  
+				  input[type="submit"]:hover {
+				  font-size: 20px;
+				  background-color: #AD4FBB;
+				  width: 280px;
+			  }
+			  
+			  p {
+				  text-align: center;
+				  padding-top: 20px;
+				  font-size: 15px;
+			  }
+			   /* CSS for footer */
+   
+	
+  
+  
+		</style>
+		
+	</head>
+	
+	<body>
+		<div class="SignUp">
+			<h1>Sign Up</h1>
+			<h4>Sign Up to our web for free</h4>
+			<form action="register.php" method="POST" class="form-inner">
+				<label><input type="text" name = "username" placeholder="User Name" required></label>
+				
+				<label><input type="text" name = "gender" placeholder="gender" required></label>
+				<label><input type="tel" name = "contact" placeholder="Contact Address" required></label>
+				<label><input type="email" name = "email" placeholder="Email" required></label>
+				<label><input type="password" name = "pass" placeholder="Password" required></label>
+				<input type="submit" name="submit" value="SUBMIT">
+
+			</form>
+			<div class="info">
+				<p> By clicking the buttton, you agree to our<a href= "#">Terms And Conditions</a> And <a href="#">Policy Privacy</a href></p>
+			</div>
+			<p>Already have account <a href="signin.php">LOGIN</a></p>
+		</div>
+		
+  
+
+	</body>
+</html>

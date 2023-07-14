@@ -1,0 +1,111 @@
+
+* {
+    box-sizing: border-box;
+    }
+    input[type=text]{
+    width: 100%;
+    
+    
+    }
+    
+    
+    
+    
+    .dark-mode {
+    background-color:black;
+    color: #bbbbbb5d;
+    
+    }
+    body{
+    background-attachment: fixed;
+    background-color: lightblue;
+    
+    }
+    
+    input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+    }
+    
+    #regForm {
+    background-color:white;
+    color: black;
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+    }
+    A
+    h1 {
+    text-align: center; 
+    font: optional;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    
+    }
+    
+    
+    
+    /* Mark input boxes that gets an error on validation: */
+    input.invalid {
+    background-color: #ffdddd;
+    }
+    
+    /* Hide all steps by default: */
+    .tab {
+    display: none;
+    }
+    
+    button {
+    background-color: #04AA6D;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+    }
+    
+    button:hover {
+    opacity: 0.8;
+    }
+    
+    #prevBtn {
+    background-color: #0a4908;
+    }
+    
+    /* Make circles that indicate the steps of the form: */
+    .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+    }
+    
+    .step.active {
+    opacity: 1;
+    }
+    
+    /* Mark the steps that are finished and valid: */
+    .step.finish {
+    background-color: #049faaf8;
+    }
+    p1{
+    font-size: medium;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .mode{
+    background-color: rgba(238, 40, 40, 0.815);
+    shape-margin: 0cqb;
+    text-align: right;
+    }
+    
+     
