@@ -9,8 +9,8 @@ class UserAdmin(admin.ModelAdmin):
 
 
 class ProfileAdmin(admin.ModelAdmin):
-    search_fields = ['fullname', 'user__username', 'image_tag']
-    list_display = ['fullname', 'user', 'gender', 'image_tag']
+    search_fields = ['image', 'user__username', 'image_tag']
+    list_display = ['image', 'user', 'gender', 'image_tag']
     # readonly_fields = ['image_tag']
 
 

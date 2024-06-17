@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}otp{% endblock %}
+
+{% block content %}
+
+    <h2>VERIFY YOUE ACCOUNT</h2>
+    <div class="signup-container container p-3 ml-3 bg-primary">
+        <form action="" class="signup-form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+{% endblock %}

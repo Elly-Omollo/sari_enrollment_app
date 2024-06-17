@@ -43,6 +43,12 @@ INSTALLED_APPS = [
     
     # my apps
     'userauth',
+    'KEMFORM',
+
+    # third party app
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +148,13 @@ LOGIN_URL = "userauth:login"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# EMAIL SETTINGS
+EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
+
+EMAIL_HOST = ''
+EMAIL_PORT = ''
+EMAIL_USES_TLS = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''

@@ -21,10 +21,27 @@
         box-shadow: 10px 0 2px 0 10px rgb(100, 10, 70);
 
     }
+    .signup-container{
+        background-color: beige;
+        width: 450px;
+        margin: 50px auto;
+    }
+    .signup-form{
+        background-color: cadetblue;
+        display: flexbox;
+        padding: auto;
+    }
 </style>
 
 <body>
     <h2>Account creation page</h2>
+    <div class="signup-container">
+        <form action="" class="signup-form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="submit">
+        </form>
+    </div>
 </body>
 
 </html>

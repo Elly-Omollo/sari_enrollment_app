@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 from shortuuid.django_fields import ShortUUIDField
 from django.utils.html import mark_safe
+# from django.core.validators import RegexValidator
 
 
 
@@ -20,6 +21,7 @@ gender = [
 ]
 
 
+
 class User(AbstractUser):
     fullname = models.CharField(max_length=100, null= True, blank=True)
     username = models.CharField(max_length=100, unique=True)
@@ -27,14 +29,22 @@ class User(AbstractUser):
     phone_number = models.CharField(max_length=20, unique=True, null=True, blank=True)
     gender =models.CharField(max_length=20, choices=gender, default='other')
 
-    otp = models.CharField(max_length=100, null=True, blank=True)
+    # otp verifications 
+    otp = models.CharField(max_length=6, null=True, blank=True)
+    otp_expiry = models.DateTimeField(blank=True, null=True)
+    max_otp_try = models.CharField(max_length=2, default=3)
+    otp_max_out = models.DateTimeField(blank=True, null=True)
+
+#     phone = models.CharField(max_length=10,unique=True, blank=True, null=True, validators=[RegexValidator(
+#  regex=r"^\d{10}", message="Phone number must be 10 digits only.")])
+     
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
 
     def __str__(self):
-        return f"{self.username}"
+        return f"{self.username} {self.phone_number}"
 
 
 
@@ -50,9 +60,9 @@ class Profile(models.Model):
 
     def __str__(self):
         if self.fullname:
-            return f"{self.fullname}"
+            return f"{self.image}"
         else:
-            return f"{self.user}"
+            return f"{self.image}"
 
     def image_tag(self):
         if self.image:
