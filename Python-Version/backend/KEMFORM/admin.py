@@ -132,10 +132,10 @@ class VaccinationAdmin(admin.ModelAdmin):
     list_display = (
         'patient',
         'infuenza_vaccine',
+        'influenza_verification',
         'covid_19',
         'number_of_covid_doses',
         'covid_19_test_verified_card',
-        'covid_19_test',
         'covid_19_result',
         
     )

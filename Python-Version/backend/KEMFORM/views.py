@@ -50,3 +50,25 @@ def childrenInfo(request):
 def risksFactors(request):
     form = RiskFactorsForm()
     return render(request, 'app/risksFactors.html', {'form':form})
+
+
+def physicalExamination(request):
+    form = PhysicalExaminationForm()
+    return render(request, 'app/physicalExamination.html', {'form':form})
+
+
+def diseaseSverity(request):
+    form = DiseaseSeverityForm()
+    return render(request, 'app/diseaseSverity.html', {'form':form})
+
+def vaccination(request):
+    form = VaccinationForm()
+    return render(request, 'app/vaccination.html', {'form':form})
+
+def specimenCollection(request):
+    form = SpecimenCollectionForm()
+    return render(request, 'app/specimenCollection.html', {'form':form})
+
+def finalOutcome(request):
+    form = FinalOutcomeForm()
+    return render(request, 'app/finalOutcome.html', {'form':form})

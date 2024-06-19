@@ -21,8 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("userauth.urls")),
-    path('home/', include("KEMFORM.urls")),
+    path('user/', include("userauth.urls")),
+    path('', include("KEMFORM.urls")),
 ]
  
 if settings.DEBUG:

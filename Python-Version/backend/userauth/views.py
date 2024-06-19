@@ -55,7 +55,7 @@ class login(APIView):
                     user_query.save()
 
                     # send_otp_phone(user_query.phone_number, otp)
-                    # send_otp_mail(email, otp)
+                    send_otp_mail(email, otp)
                     messages.success(request, f'An otp was sent  to this bumber {user_query.phone_number}')
                     print(f'An otp was sent  to this bumber {user_query.phone_number}')
                     print(f"User found: {user_query}")

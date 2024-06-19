@@ -4,6 +4,7 @@ import random
 import string
 from django.core.mail import send_mail
 from twilio.rest import Client # this is for twilio
+from .models import User
 
 # generating random otp
 
@@ -17,9 +18,11 @@ def generate_otp(length=6):
 
 
 # EMAIL SENDING
+
+
 def send_otp_mail(email, otp):
-    subject = 'Youe OTP for Login'
-    message = f'Your otp is: {otp}'
+    subject = 'Account Activation'
+    message = f'Your otp is:\n {otp}'
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [email]
     send_mail(subject, message, from_email, recipient_list)

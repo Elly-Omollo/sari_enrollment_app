@@ -129,12 +129,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 
-STATIC_FILES_DIRS = [
+STATICFILES_DIRS = [
     FRONTEND_DIR / 'static'
     ]
+STATIC_ROOT = os.path.join(FRONTEND_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = FRONTEND_DIR / 'media'
@@ -151,10 +152,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # EMAIL SETTINGS
-EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
-
-EMAIL_HOST = ''
-EMAIL_PORT = ''
-EMAIL_USES_TLS = True
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.shahibu.com'
+EMAIL_HOST_USER = 'ebooking@shahibu.com'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = 'Hr{Y,st!j}r8'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
