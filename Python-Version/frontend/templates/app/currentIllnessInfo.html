@@ -1,9 +1,125 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<form action="" method="get">
-    {{form.as_p}}
-    <input type="submit" value="submit">
-</form>
 
+{%block title%}
+    Current Illness Information
+{%  endblock %}
+
+
+
+<!-- My HTML page -->
+{% block content %}
+<div class="containter p-5">
+    <form action="" method="get">
+        {% csrf_token %}
+        <fieldset class="border p-2">
+            <legend class="w-auto">Patient Details</legend>
+            {{ form.non_field_errors }}
+            <div class="form-group">
+                {{ form.patient.label_tag }}
+                {{ form.patient }}
+            </div>
+            <div class="form-group">
+                {{ form.onset_date.label_tag }}
+                {{ form.onset_date }}
+            </div>
+            <div class="form-group">
+                {{ form.date_for_hospital_admision.label_tag }}
+                {{ form.date_for_hospital_admision }}
+            </div>
+            <div class="form-group">
+                {{ form.date_of_outpatient.label_tag }}
+                {{ form.date_of_outpatient }}
+            </div>
+        </fieldset>
+        
+         <h2 style="text-align: center;">Symptoms </h2>
+        <fieldset class="border p-2 mt-4">
+            <legend><p>Has the had the following Symptoms or signs with thes illness?</p></legend>
+            <div class="row m-3">
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.wheezing.label_tag }}
+                        {{ form.wheezing }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.sore_throat.label_tag }}
+                        {{ form.sore_throat }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.difficulty_in_breathing.label_tag }}
+                        {{ form.difficulty_in_breathing }}
+                    </div>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.rhinorrhea.label_tag }}
+                        {{ form.rhinorrhea }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.chest_pain.label_tag }}
+                        {{ form.chest_pain }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.diarrhea.label_tag }}
+                        {{ form.diarrhea }}
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row m-3">
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.vomiting.label_tag }}
+                        {{ form.vomiting }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.muscles_aches.label_tag }}
+                        {{ form.muscles_aches }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.convulsions.label_tag }}
+                        {{ form.convulsions }}
+                    </div>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.chills.label_tag }}
+                        {{ form.chills }}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        {{ form.lack_of_appetite.label_tag }}
+                        {{ form.lack_of_appetite }}
+                    </div>
+                </div>
+            </div>
+            
+        </fieldset>
+        <div class=" d-flex justify-content-space-between p-3 g-3">
+        <input type="button" value="SUBMIT" class="btn btn-success">
+        <input type="submit" value="SUBMIT" class="btn btn-success">
+        <input type="button" value="SUBMIT" class="btn btn-success">
+        </div>
+    </form>
+</div>
 {% endblock %}
+
+

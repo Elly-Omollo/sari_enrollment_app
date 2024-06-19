@@ -1,28 +1,45 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-
 <head>
-    {% block title %}{% endblock %}
-
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block title %}
+            <title>Patient</title>
+        {% endblock %}  
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+
+    <style>
+        body{
+            background-color: rgb(196, 196, 180);
+            z-index: -1;
+        }
+    </style>
+    <!-- custom files -->
+    <!-- Load custom JavaScript files -->
+    <!-- <script src="{% static 'javascript/main.js' %}"></script> -->
+    <!-- <link rel="stylesheet" href="{% static 'screening.css' %}"> -->
+    <!-- <script src="{% static 'screening.css' %}"></script> -->
+    <!-- Add more script tags if you have multiple JavaScript files -->
 </head>
 
 <body>
     <ul class="nav bg-info">
         <li class="nav-item">
-            <a class="nav-link link-light" href="/">HOME</a>
+            <a class="nav-link link-light" href="#">HOME</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link link-light" href="/members">MEMBERS</a>
+            <a class="nav-link link-light" href="#">MEMBERS</a>
         </li>
     </ul>
     <div class="container p-5">
         {% block content %}
         {% endblock %}
     </div>
-</body>
 
+    <!-- bootstrap javascript -->
+    {% bootstrap_javascript %}
+</body>
 </html>

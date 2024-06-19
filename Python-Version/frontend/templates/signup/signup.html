@@ -1,47 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'userauth/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<style>
-    body {
-        background-color: blanchedalmond;
 
-    }
-
-    h2 {
-        width: 400px;
-        margin: 100px auto;
-        padding: 10px;
-        background: rgb(202, 138, 18);
-        box-shadow: 10px 0 2px 0 10px rgb(100, 10, 70);
-
-    }
-    .signup-container{
-        background-color: beige;
-        width: 450px;
-        margin: 50px auto;
-    }
-    .signup-form{
-        background-color: cadetblue;
-        display: flexbox;
-        padding: auto;
-    }
-</style>
-
-<body>
-    <h2>Account creation page</h2>
-    <div class="signup-container">
-        <form action="" class="signup-form" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="submit">
-        </form>
+{% block content %}
+    <div class="containter-fliud my-2">
+        <div class="signup-form  rounded p-4 mx-auto " style="max-width:400px; background-color: #fff; border-radius: 5px; box-shadow: 1px 0 15px .2px rgba(0,20,0,0.1);">
+            <h2 class="text-center">Sign Up</h2>
+            <form action="" method="post" class="">
+                {% csrf_token %}
+                    {{ form.non_field_errors }}
+                            <div class="form-group mb-3">
+                                {{ form.fullname.label_tag }}
+                                {{ form.fullname }}
+                            </div>
+                      
+                            <div class="form-group mb-3">
+                                {{ form.username.label_tag }}
+                                {{ form.username }}
+                            </div>
+                      
+                            <div class="form-group mb-3">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                            </div>
+                   
+                    <div class="form-group mb-3">
+                        {{ form.phone_number.label_tag }}
+                        {{ form.phone_number }}
+                    </div>
+                    <div class="form-group mb-3">
+                        {{ form.password1.label_tag }}
+                        {{ form.password1 }}
+                    </div>
+                    <div class="form-group mb-3">
+                        {{ form.password2.label_tag }}
+                        {{ form.password2 }}
+                    </div>
+                <div class="d-flex justify-content-between p-3 g-3">
+                    <input type="submit" value="SUBMIT" class="btn btn-success w-100">
+                </div>
+            </form>
+        </div>
     </div>
-</body>
-
-</html>
+{% endblock %}

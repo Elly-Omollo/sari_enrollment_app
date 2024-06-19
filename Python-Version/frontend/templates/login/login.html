@@ -1,58 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'userauth/base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+{% block title %}
+Login
+{% endblock %}
+
     <!-- Custom CSS -->
-    <style>
-        body {
-            background-image: url('hotel_background_image.jpg');
-            /* Replace with your hotel background image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            /* Ensures that the background image does not scroll */
-        }
+     {% block static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    {% endblock %}
 
-        .login-form {
-            max-width: 350px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-form h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .messages {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-        }
-
-        .error {
-            border: none;
-            /* background-color: #aca6a7; */
-            color: #d61024;
-        }
-    </style>
-</head>
-
-<body>
+{% block content %}
     <div class="container">
         <div class="login-form">
             <h2>Login</h2>
@@ -66,7 +24,6 @@
                     {% endfor %}
                 </ul>
                 {% endif %}
-
             </div>
             <form action="" method="post">
                 {% csrf_token %}
@@ -78,20 +35,20 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                
+                <div class="container p-3 mt-3">
+                    <div class="row">
+                        <button type="submit" class="btn btn-outline-primary">Login</button>
                     </div>
-                    <div class="col-6">
-                        <a href="{% url 'signup' %}" class="text-center btn btn-primary btn-block">
-                            <div class="text-white">Create Account</div>
+                    <div class="row mt-3">
+                        <a href="" class="text-center">
+                            Forgot password?
                         </a>
                     </div>
                 </div>
             </form>
-            <hr />
+           
+            
         </div>
 
         <script>
@@ -110,6 +67,5 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+    </div>
+{% endblock %}

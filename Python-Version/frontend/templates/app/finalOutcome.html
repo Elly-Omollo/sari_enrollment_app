@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="containter p-5">
+    <h2>
+        Final outcome
+    </h2>
+    <form action="" method="get">
+        {% csrf_token %}
+        <div class="form-group mb-4 ">
+            {{ form.patient.label_tag }}
+            {{ form.patient }}
+        </div>
+       
+            
+            <div class="form-group">
+                {{ form.final_outcome.label_tag }}
+                {{ form.final_outcome }}
+            </div>
+            <div class="form-group">
+                {{ form.refered_facility_name.label_tag }}
+                {{ form.refered_facility_name }}
+            </div>
+            <div class="form-group">
+                {{ form.date_of_final_outcome.label_tag }}
+                {{ form.date_of_final_outcome }}
+            </div>
+       
+        <div class=" d-flex justify-content-space-between p-3 g-3">
+            <input type="button" value="SUBMIT" class="btn btn-success">
+            <input type="submit" value="SUBMIT" class="btn btn-success">
+            <div class="btn">
+                
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

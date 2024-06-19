@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="containter p-5">
+    <h2>
+        Vaccination
+    </h2>
+    <form action="" method="get">
+        {% csrf_token %}
+        <div class="form-group ">
+            {{ form.patient.label_tag }}
+            {{ form.patient }}
+        </div>
+        <fieldset class="border rounded p-2 mt-4">
+            <p>Has the patient received any of the following vaccinations? (Ask to see vaccination card)</p>
+            
+            {{ form.non_field_errors }}
+            <div class="form-group">
+                {{ form.infuenza_vaccine.label_tag }}
+                {{ form.infuenza_vaccine }}
+            </div>
+            <div class="form-group">
+                {{ form.influenza_verification.label_tag }}
+                {{ form.influenza_verification }}
+            </div>
+            <div class="form-group">
+                {{ form.covid_19.label_tag }}
+                {{ form.covid_19 }}
+            </div>
+            <div class="form-group">
+                {{ form.number_of_covid_doses.label_tag }}
+                {{ form.number_of_covid_doses }}
+            </div>
+            <div class="form-group">
+                {{ form.covid_19_test_verified_card.label_tag }}
+                {{ form.covid_19_test_verified_card }}
+            </div>
+            <div class="form-group">
+                {{ form.covid_19_result.label_tag }}
+                {{ form.covid_19_result }}
+            </div>
+
+        </fieldset>
+        <div class=" d-flex justify-content-space-between p-3 g-3">
+            <input type="button" value="SUBMIT" class="btn btn-success">
+            <input type="submit" value="SUBMIT" class="btn btn-success">
+            <div class="btn">
+                <a href="{% url 'spacimen-collection' %}">
+                    <input type="button" value="NEXT" class="btn btn-success">
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

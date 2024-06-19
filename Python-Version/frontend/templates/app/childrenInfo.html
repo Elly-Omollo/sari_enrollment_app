@@ -1,9 +1,57 @@
+{% load static %}
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="" method="get">
-    {{form.as_p}}
-    <input type="submit" value="submit">
-</form>
+<div class="containter p-5">
+    <p>Complete the follwing for children less than 5 years</p>
+    <form action="" method="get">
+        {% csrf_token %}
+        <fieldset class="border p-2">
+            <legend class="w-auto"></legend>
+            {{ form.non_field_errors }}
+            <div class="form-group">
+                {{ form.patient.label_tag }}
+                {{ form.patient }}
+            </div>
+            <div class="form-group">
+                {{ form.unable_to_drink.label_tag }}
+                {{ form.unable_to_drink }}
+            </div>
+            <div class="form-group">
+                {{ form.vomits.label_tag }}
+                {{ form.vomits }}
+            </div>
+            <div class="form-group">
+                {{ form.stridor.label_tag }}
+                {{ form.stridor }}
+            </div>
+            <div class="form-group">
+                {{ form.grunting.label_tag }}
+                {{ form.grunting }}
+            </div>
+            <div class="form-group">
+                {{ form.nasal_flaring.label_tag }}
+                {{ form.nasal_flaring }}
+            </div>
+            <div class="form-group">
+                {{ form.chest_in_drawing.label_tag }}
+                {{ form.chest_in_drawing }}
+            </div>
+            <div class="form-group">
+                {{ form.lethargic.label_tag }}
+                {{ form.lethargic }}
+            </div>
+            <div class="form-group">
+                {{ form.unconcious.label_tag }}
+                {{ form.unconcious }}
+            </div>
+        </fieldset>
+        <div class=" d-flex justify-content-space-between p-3 g-3">
+            <input type="button" value="SUBMIT" class="btn btn-success">
+            <input type="submit" value="SUBMIT" class="btn btn-success">
+            <input type="button" value="SUBMIT" class="btn btn-success">
+        </div>
+    </form>
+</div>
 
 {% endblock %}
