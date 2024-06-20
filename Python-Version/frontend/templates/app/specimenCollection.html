@@ -2,14 +2,11 @@
 
 {% block content %}
 
-{{form.as_p}}
-
-
 <div class="containter p-5">
     <h2>
         Specimen Collection
     </h2>
-    <form action="" method="get">
+    <form action="" method="POST">
         {% csrf_token %}
         <div class="form-group ">
             {{ form.patient.label_tag }}
@@ -31,13 +28,7 @@
             </div>
         </fieldset>
         <div class=" d-flex justify-content-space-between p-3 g-3">
-            <input type="button" value="SUBMIT" class="btn btn-success">
             <input type="submit" value="SUBMIT" class="btn btn-success">
-            <div class="btn">
-                <a href="{% url 'finall-outcome' %}">
-                    <input type="button" value="NEXT" class="btn btn-success">
-                </a>
-            </div>
         </div>
     </form>
 </div>

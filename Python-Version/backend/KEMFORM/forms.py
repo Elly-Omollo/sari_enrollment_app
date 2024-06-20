@@ -8,7 +8,7 @@ class PatientDetailsForm(forms.ModelForm):
         widgets = {
             'patientId':forms.TextInput(attrs={'class':'form-control'}),
             'hospitalID':forms.TextInput(attrs={'class':'form-control'}),
-            'interview_date':forms.DateInput(attrs={'class':'form-control'})
+           
             
         }
 
@@ -23,7 +23,7 @@ class ScreeningQuestionForm(forms.ModelForm):
             'cough':forms.Select(attrs={'class':'form-control'}),
             'onset_of_symptoms':forms.Select(attrs={'class':'form-control'}),
             'hospitalized':forms.Select(attrs={'class':'form-control'}),
-            'onset_date':forms.DateInput(attrs={'class':'form-control datepicker', 'placeholder': 'Interview Date'}),
+            'onset_date':forms.DateInput( attrs={'class':'form-control ', 'type': 'date'}),
             'interview_type':forms.Select(attrs={'class':'form-control'}),
             # 'interview_date': forms.DateInput(attrs={'class': 'form-control datepicker', 'placeholder': 'Interview Date'})
         }
@@ -53,12 +53,12 @@ class CurrentIllnessInfoForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'patient':forms.Select(attrs={'class':'form-control'}),
-            'onset_date':forms.DateInput(attrs={'class':'form-control'}),
-            'date_for_hospital_admision':forms.DateInput(attrs={'class':'form-control'}),
-            'date_of_outpatient':forms.DateInput(attrs={'class':'form-control'}),
+            'onset_date':forms.DateInput(attrs={'class':'form-control', 'type':'date'}),
+            'date_for_hospital_admision':forms.DateInput(attrs={'class':'form-control', 'type':'date'}),
+            'date_of_outpatient':forms.DateInput(attrs={'class':'form-control' , 'type':'date'}),
             'wheezing':forms.Select(attrs={'class':'form-control'}),
             'sore_throat':forms.Select(attrs={'class':'form-control'}),
-            'difficulty_in_breathing':forms.Select(attrs={'class':'form-control datepicker', 'placeholder': 'Interview Date'}),
+            'difficulty_in_breathing':forms.Select(attrs={'class':'form-control', 'placeholder': 'Interview Date'}),
             'rhinorrhea':forms.Select(attrs={'class':'form-control'}),
             'chest_pain':forms.Select(attrs={'class':'form-control'}),
             'diarrhea':forms.Select(attrs={'class':'form-control'}),
@@ -155,7 +155,7 @@ class VaccinationForm(forms.ModelForm):
             'infuenza_vaccine':forms.Select(attrs={'class':'form-control'}),
             'influenza_verification':forms.Select(attrs={'class':'form-control'}),
             'covid_19':forms.Select(attrs={'class':'form-control'}),
-            'number_of_covid_doses':forms.Select(attrs={'class':'form-control'}),
+            'number_of_covid_doses':forms.TextInput(attrs={'class':'form-control'}),
             'covid_19_test_verified_card':forms.Select(attrs={'class':'form-control'}),
             
             'covid_19_result':forms.Select(attrs={'class':'form-control'}),
@@ -171,7 +171,7 @@ class SpecimenCollectionForm(forms.ModelForm):
             'patient':forms.Select(attrs={'class':'form-control'}),
             'specimen_collected':forms.Select(attrs={'class':'form-control'}),
             'type_of_spacimen_collected':forms.Select(attrs={'class':'form-control'}),
-            'date_of_specimen_collection':forms.DateInput(attrs={'class':'form-control'}),
+            'date_of_specimen_collection':forms.DateInput(attrs={'class':'form-control', 'type':'date'}),
             
         }
 
@@ -184,6 +184,6 @@ class FinalOutcomeForm(forms.ModelForm):
             'patient':forms.Select(attrs={'class':'form-control'}),
             'final_outcome':forms.Select(attrs={'class':'form-control'}),
             'refered_facility_name':forms.TextInput(attrs={'class':'form-control'}),
-            'date_of_final_outcome':forms.DateInput(attrs={'class':'form-control'}),
+            'date_of_final_outcome':forms.DateInput(attrs={'class':'form-control','type':'date'}),
             
         }

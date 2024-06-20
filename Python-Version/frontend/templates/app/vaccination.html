@@ -5,7 +5,7 @@
     <h2>
         Vaccination
     </h2>
-    <form action="" method="get">
+    <form action="" method="POST">
         {% csrf_token %}
         <div class="form-group ">
             {{ form.patient.label_tag }}
@@ -42,13 +42,7 @@
 
         </fieldset>
         <div class=" d-flex justify-content-space-between p-3 g-3">
-            <input type="button" value="SUBMIT" class="btn btn-success">
             <input type="submit" value="SUBMIT" class="btn btn-success">
-            <div class="btn">
-                <a href="{% url 'spacimen-collection' %}">
-                    <input type="button" value="NEXT" class="btn btn-success">
-                </a>
-            </div>
         </div>
     </form>
 </div>

@@ -4,9 +4,8 @@
 
    <div class="containter p-5">
       <h2>Patient Details</h2>
-      <form action="" method="get">
+      <form action="" method="post">
          {% csrf_token %}
-            {{ form.non_field_errors }}
             <div class="form-group">
                {{ form.patientId.label_tag }}
                {{ form.patientId }}
@@ -16,13 +15,16 @@
                {{ form.hospitalID }}
             </div>
         
-         <div class=" d-flex justify-content-space-between p-3 g-3">
-            <input type="button" value="SUBMIT" class="btn btn-success">
-            <input type="submit" value="SUBMIT" class="btn btn-success">
+         <div class=" d-flex justify-content-space-between btn p-3 g-3">
+            <div class="col-md-3 col-lg-3 col-sm-6">
+               <a href="{% url 'home'  %}">
+                  Back
+               </a>
+            </div>
             
             <div class="btn">
-               <a href="{% url 'patient-screening' %}">
-                  <input type="button" value="SUBMIT" class="btn btn-success">
+               <a href="">
+                  <button type="submit"  class="btn btn-success">Submit </button>
                </a>
             </div>
          </div>

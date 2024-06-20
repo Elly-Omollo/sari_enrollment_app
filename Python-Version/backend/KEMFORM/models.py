@@ -97,7 +97,7 @@ class CurrentIllnessInfo(models.Model):
     # Date of current illness
     patient = models.ForeignKey(PatientDetails, on_delete=models.CASCADE)
     onset_date = models.DateField(auto_now_add=False, verbose_name='Date of onset of current illness')
-    date_for_hospital_admision = models.DateField(auto_now_add=False, verbose_name='Date of hospital admission(for SARI cases)') #for sari cases
+    date_for_hospital_admision = models.DateField(auto_now_add=False, null=True, verbose_name='Date of hospital admission(for SARI cases)') #for sari cases
     date_of_outpatient = models.DateField(auto_now_add=False, verbose_name='Date seen in out-patient(for ILI cases)')  #for ILI case
 
     wheezing = models.CharField(max_length=10, choices=RESPONSE_CHOICES)
